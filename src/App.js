@@ -19,9 +19,10 @@ state = {
 }
 
 handleChange = (e) => {
-    this.setState({name: e.target.keyword})
+    this.setState({keyword: e.target.value})
 }
 
+               
     render(){
         return (
             <div className='creatures'>
@@ -33,7 +34,7 @@ handleChange = (e) => {
                 <select  onChange = {this.handleChange}>
                     <option value = ''>All Creatures </option>
                     <option value = 'addax'> Gotta add in Addax </option>
-                    <option value = 'unicorns'>United Unicorn</option>
+                    <option value = 'unicorn'>United Unicorn</option>
                     <option value = 'rhino'> Rockin Rhinos</option>
                     <option value = 'narhwals'>Narwhals Cause Commotions</option>
                     <option value = 'triceratops'>TriCERAtops</option>

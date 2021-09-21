@@ -1,3 +1,11 @@
+/*{
+  background-color: url(./public/background.jpg);
+  background-repeat:no-repeat;
+  width: auto;
+  background-size: cover;
+  
+}*/
+
 .App {
   text-align: center;
 }
@@ -36,3 +44,29 @@
     transform: rotate(360deg);
   }
 }
+
+.title{
+  text-align: center;
+  border:solid rgb(119, 33, 50) 5px;
+  color:rgb(88, 68, 12);
+
+
+
+}
+.img{
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+ 
+}
+.images{
+  padding: 10px;
+  margin: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  border:double rgb(138, 9, 9) 6px;
+}
+
+

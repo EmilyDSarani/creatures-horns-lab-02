@@ -5,11 +5,11 @@ export default class ImageList extends Component {
     render() {
         return (
             <div className="images">
-            <img className= 'img' src={this.props.url} alt='urls'/>
-            {this.props.title} 
-            {this.props.description} 
-            {this.props.keyword} 
-            {this.props.horns} 
+            <img className= 'img' src={this.props.url} alt='urls'/> <br/>
+            The Almighty {this.props.title} <br/>
+            Fun Fact: {this.props.description} <br/>
+            Species: {this.props.keyword} <br/>
+            Horns: {this.props.horns} <br/>
             </div>
             
         )

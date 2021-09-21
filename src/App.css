@@ -1,5 +1,5 @@
 /*{
-  background-image: url(https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+  background-color: url(./public/background.jpg);
   background-repeat:no-repeat;
   width: auto;
   background-size: cover;
@@ -54,14 +54,19 @@
 
 }
 .img{
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   display: flex;
   justify-content: center;
  
 }
 .images{
+  padding: 10px;
+  margin: 40px;
+  text-align: center;
   display: flex;
   justify-content: center;
-  
+  border:double rgb(138, 9, 9) 6px;
 }
+
+

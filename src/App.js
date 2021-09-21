@@ -7,7 +7,10 @@ import './App.css'
 //will also do the filter, maps, section, option, handlechange
 //e.target.keyword
 
-
+//Main Idea and goal: This needs to take in the state and keyword. The handleChange will make it so that it specifically targets the keyword.
+//It will render out everything and the the filter will take into account "if there is nothing, show all, but if they select the correspoding option in the dropdown, bring up everything with that option"
+//the mapping will render the photos, title, etc to the page 
+//Am I understanding this right...
 
 export default class ImageItem extends Component {
 
@@ -19,26 +22,17 @@ handleChange = (e) => {
     this.setState({name: e.target.keyword})
 }
 
-    render()
-  
-     {
-        const whackCreatures = dataCreatures
-        .filter (creature => {
-            if(!this.state.keyword){
-                return true
-            }
-            return creature.keyword === this.state.keyword
-        })
-
+    render(){
         return (
             <div className='creatures'>
                 <Header />
 
 
-                <p>show all {this.state.keyword} creatures with horns</p>
-
-                <select onChange = {this.handleChange}>
+                <p>All {this.state.keyword} creatures with horns</p>
+                
+                <select  onChange = {this.handleChange}>
                     <option value = ''>All Creatures </option>
+                    <option value = 'addax'> Gotta add in Addax </option>
                     <option value = 'unicorns'>United Unicorn</option>
                     <option value = 'rhino'> Rockin Rhinos</option>
                     <option value = 'narhwals'>Narwhals Cause Commotions</option>
@@ -49,16 +43,23 @@ handleChange = (e) => {
                     <option value = 'lizard'>Horned Lizard, some call it a toad</option>
                     <option value = 'dragon'>I am Fire. I am Death.</option>
                 </select>
-
                 {
-                whackCreatures.map(creature => <ImageList
+         dataCreatures
+        .filter (creature => {
+            if(!this.state.keyword){
+                return true
+            }
+            return creature.keyword === this.state.keyword
+        })
+                
+        .map(creature => <ImageList
             url = {creature.url}
             title = {creature.title}
             description = {creature.description}
             keyword = {creature.keyword}
             horns = {creature.horns}    
             />)
-                }
+              }
             </div>
         )
     }

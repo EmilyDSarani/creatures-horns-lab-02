@@ -1,3 +1,10 @@
+*{
+  background-image: url(https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+  background-repeat:no-repeat;
+  width: auto;
+  background-size: cover;
+  
+}
 .App {
   text-align: center;
 }
@@ -35,4 +42,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.title{
+  text-align: center;
+  border:solid rgb(119, 33, 50) 5px;
+  color:rgb(88, 68, 12);
+
+
+
 }

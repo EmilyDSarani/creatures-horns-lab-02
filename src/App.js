@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
-import ImageList from './components/ImageList'
-import dataCreatures from './data.js'
+import ImageList from './components/ImageList';
+import dataCreatures from './data.js';
+import Dropdown from './components/Dropdown';
 import './App.css'
 //will need to import the imagelist over here, this is where I will use that list to map out the items 
 //will also do the filter, maps, section, option, handlechange
@@ -12,16 +13,19 @@ import './App.css'
 //the mapping will render the photos, title, etc to the page 
 //Am I understanding this right...
 
-export default class ImageItem extends Component {
+export default class App extends Component {
 
 state = {
-    keyword: ''
+    keyword: '',
+    horns: ''
 }
 
-handleChange = (e) => {
+handleKeywordChange = (e) => {
     this.setState({keyword: e.target.value})
 }
-
+handleHornsChange = (e) => {
+  this.setState(Number({horns: e.target.value}))
+}
                
     render(){
         return (
@@ -29,22 +33,25 @@ handleChange = (e) => {
                 <Header />
 
 
-                <p>All {this.state.keyword} creatures with horns</p>
+                <p>All {this.state.keyword} creatures with {this.state.horns}</p>
                 
-                <select  onChange = {this.handleChange}>
-                    <option value = ''>All Creatures </option>
-                    <option value = 'addax'> Gotta add in Addax </option>
-                    <option value = 'unicorn'>United Unicorn</option>
-                    <option value = 'rhino'> Rockin Rhinos</option>
-                    <option value = 'narwhal'>Narwhals Cause Commotions</option>
-                    <option value = 'triceratops'>TriCERAtops</option>
-                    <option value = 'markhor'>Mighty Morphin Markhors</option>
-                    <option value = 'mouflon'>I like to Mouflon Mouflon</option>
-                    <option value = 'chameleon'>Chamillionaire Chameleons</option>
-                    <option value = 'lizard'>Horned Lizard, some call it a toad</option>
-                    <option value = 'dragon'>I am Fire. I am Death.</option>
-                </select>
+                <Dropdown handleKeywordChange={this.handleKeywordChange}
+                option={['',
+                'addax',
+                'unicorn',
+                'rhino',
+                'narwhal',
+                'triceratops',
+                'markhor',
+                'mouflon',
+                'chameleon',
+                'lizard',
+                'dragon']} />
+              <Dropdown handleHornsChange={this.handleHornsChange}
+                option={['', 1, 2, 3,]} />
+               
                 {
+
          dataCreatures
         .filter (creature => {
             if(!this.state.keyword){
@@ -52,6 +59,12 @@ handleChange = (e) => {
             }
             return creature.keyword === this.state.keyword
         })
+        .filter (creature => {
+          if(!this.state.horns){
+              return true
+          }
+          return creature.horns === this.state.horns
+      })
                 
         .map(creature => <ImageList
             url = {creature.url}

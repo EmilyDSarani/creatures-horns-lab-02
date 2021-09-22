@@ -20,7 +20,9 @@ state = {
     keyword: '',
     horns: ''
 }
-
+//these handle events are making it possible for the user to select the keyword and horn.
+//so..the e...is what we are passing through and it is targeting the value so that...when the user selects it is selecting the exact value?
+//I am still a bit foggy on it...
 handleKeywordChange = (e) => {
     this.setState({keyword: e.target.value})
 }

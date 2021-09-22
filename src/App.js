@@ -36,7 +36,7 @@ handleChange = (e) => {
                     <option value = 'addax'> Gotta add in Addax </option>
                     <option value = 'unicorn'>United Unicorn</option>
                     <option value = 'rhino'> Rockin Rhinos</option>
-                    <option value = 'narhwals'>Narwhals Cause Commotions</option>
+                    <option value = 'narwhal'>Narwhals Cause Commotions</option>
                     <option value = 'triceratops'>TriCERAtops</option>
                     <option value = 'markhor'>Mighty Morphin Markhors</option>
                     <option value = 'mouflon'>I like to Mouflon Mouflon</option>

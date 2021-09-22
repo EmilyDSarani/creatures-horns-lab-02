@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-
+//this is just the header page that we will pop into app.js
 //create a cute header, make it snazzy
 export default class Header extends Component {
     render() {

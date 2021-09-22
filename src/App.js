@@ -3,6 +3,7 @@ import Header from './components/Header';
 import ImageList from './components/ImageList';
 import dataCreatures from './data.js';
 import Dropdown from './components/Dropdown';
+import PTag from './components/PTag';
 import './App.css'
 //will need to import the imagelist over here, this is where I will use that list to map out the items 
 //will also do the filter, maps, section, option, handlechange
@@ -24,7 +25,7 @@ handleKeywordChange = (e) => {
     this.setState({keyword: e.target.value})
 }
 handleHornsChange = (e) => {
-  this.setState(Number({horns: e.target.value}))
+  this.setState({horns: Number(e.target.value)})
 }
                
     render(){
@@ -33,9 +34,13 @@ handleHornsChange = (e) => {
                 <Header />
 
 
-                <p>All {this.state.keyword} creatures with {this.state.horns}</p>
-                
-                <Dropdown handleKeywordChange={this.handleKeywordChange}
+               <PTag keyword={this.state.keyword}
+               horns={this.state.horns}/>
+            
+            {/* this wonderful beautiful confusing code is...I think a callback? we use the general name of handlechange
+            then on the dropdown page it would need to read this.props.handleChange to match it up. This allows it to render both in.*/}
+            {/* the options portion, i think...is like putting a value on it. it...will read the different values and have it equal that value?*/}
+                <Dropdown handleChange={this.handleKeywordChange}
                 option={['',
                 'addax',
                 'unicorn',
@@ -47,34 +52,13 @@ handleHornsChange = (e) => {
                 'chameleon',
                 'lizard',
                 'dragon']} />
-              <Dropdown handleHornsChange={this.handleHornsChange}
-                option={['', 1, 2, 3,]} />
+              <Dropdown handleChange={this.handleHornsChange}
+                option={['', 1, 2, 3, 100]} />
+               <ImageList items={dataCreatures}
+               keyword={this.state.keyword}
+                horns={this.state.horns}/>
                
-                {
-
-         dataCreatures
-        .filter (creature => {
-            if(!this.state.keyword){
-                return true
-            }
-            return creature.keyword === this.state.keyword
-        })
-        .filter (creature => {
-          if(!this.state.horns){
-              return true
-          }
-          return creature.horns === this.state.horns
-      })
-                
-        .map(creature => <ImageList
-            url = {creature.url}
-            title = {creature.title}
-            description = {creature.description}
-            keyword = {creature.keyword}
-            horns = {creature.horns}    
-            />)
-              }
-            </div>
+</div>
         )
     }
 }

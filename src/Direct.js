@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import App from './App'
+import Home from './Home'
 import {
     BrowserRouter as Router, 
     Route, 
@@ -7,7 +8,7 @@ import {
 } from 'react-router-dom';
 
 
-export default class Home extends Component {
+export default class Direct extends Component {
     render() {
         return (
             <div>

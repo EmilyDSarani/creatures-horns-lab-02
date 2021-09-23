@@ -63,7 +63,7 @@ handleHornsChange = (e) => {
                <ImageList items={dataCreatures}
                keyword={this.state.keyword}
                 horns={this.state.horns}/>
-
+            
             <Link to="/"></Link>
           
             </div> 

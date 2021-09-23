@@ -10,20 +10,20 @@ export default class ImageList extends Component {
             <div>
 
                {
-                this.props.items
-                .filter (creature => {
+    this.props.items
+    .filter (creature => {
    if(!this.props.keyword){
        return true
    }
    return creature.keyword === this.props.keyword
-})
-.filter (creature => {
- if(!this.props.horns){
+    })
+    .filter (creature => {
+    if(!this.props.horns){
      return true
- }
- return creature.horns === this.props.horns
-})
-       .map(creature => <ImagesRender
+    }
+    return creature.horns === this.props.horns
+    })
+    .map(creature => <ImagesRender
    url = {creature.url}
    title = {creature.title}
    description = {creature.description}

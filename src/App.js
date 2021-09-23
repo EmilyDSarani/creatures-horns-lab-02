@@ -4,6 +4,8 @@ import ImageList from './components/ImageList';
 import dataCreatures from './data.js';
 import Dropdown from './components/Dropdown';
 import PTag from './components/PTag';
+import {Link, BrowserRouter as router} from 'react-router-dom';
+import Home from './Home'
 import './App.css'
 
 //will need to import the imagelist over here, this is where I will use that list to map out the items 
@@ -55,13 +57,16 @@ handleHornsChange = (e) => {
                 'chameleon',
                 'lizard',
                 'dragon']} />
+            
               <Dropdown handleChange={this.handleHornsChange}
                 option={['', 1, 2, 3, 100]} />
                <ImageList items={dataCreatures}
                keyword={this.state.keyword}
                 horns={this.state.horns}/>
-               
-</div>
+
+          
+            </div> 
+
         )
     }
 }

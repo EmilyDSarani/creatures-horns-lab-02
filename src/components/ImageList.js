@@ -24,6 +24,7 @@ export default class ImageList extends Component {
     return creature.horns === this.props.horns
     })
     .map(creature => <ImagesRender
+    key={creature.description}
    url = {creature.url}
    title = {creature.title}
    description = {creature.description}

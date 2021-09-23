@@ -4,8 +4,8 @@ import ImageList from './components/ImageList';
 import dataCreatures from './data.js';
 import Dropdown from './components/Dropdown';
 import PTag from './components/PTag';
-import {Link, BrowserRouter as router} from 'react-router-dom';
-import Home from './Home'
+import {Link } from 'react-router-dom';
+import'./Home'
 import './App.css'
 
 //will need to import the imagelist over here, this is where I will use that list to map out the items 
@@ -64,6 +64,7 @@ handleHornsChange = (e) => {
                keyword={this.state.keyword}
                 horns={this.state.horns}/>
 
+            <Link to="/"></Link>
           
             </div> 
 

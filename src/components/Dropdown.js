@@ -9,11 +9,12 @@ export default class Dropdown extends Component {
                 the option maps thing is something i wrote down in my notes that Dani mentioned. It is being matched to the option=[array] on the app.js page
                 then it is rendering the names and number of keywords/horns respectively and the selection and value are being named that.*/}
               <select onChange={this.props.handleChange}>
-              {
-            this.props.option.map(option=><option value={option}>{option}</option>)
+              { 
+            this.props.option.map(option=><option value={option} key={option}>{option}</option>)
               }
               </select>
               
+            
             </div>
         )
     }
